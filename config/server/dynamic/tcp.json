@@ -56,16 +56,18 @@
 	"outbounds": [
 		{
 			"protocol": "freedom",
-			"settings": {
-				"domainStrategy": "UseIP"
-			},
-			"tag": "direct"
+			"settings": {}
 		},
 		{
 			"protocol": "blackhole",
 			"settings": {},
 			"tag": "blocked"
-        },
+		},
+		{
+			"protocol": "freedom",
+			"settings": {},
+			"tag": "direct"
+		},
 		{
 			"protocol": "mtproto",
 			"settings": {},
@@ -75,8 +77,7 @@
 		//
 	],
 	"dns": {
-		"servers": [
-			"https+local://1.1.1.1/dns-query",
+		"server": [
 			"1.1.1.1",
 			"1.0.0.1",
 			"8.8.8.8",
@@ -125,6 +126,9 @@
             "uplinkCapacity": 100,
             "downlinkCapacity": 100,
             "congestion": true
-        }
+        },
+		"sockopt": {
+			"tcpFastOpen": true
+		}
 	}
 }
